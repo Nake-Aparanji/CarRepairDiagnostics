@@ -30,8 +30,29 @@ public class Car {
 		 *          "TIRE": 3
 		 *      }
 		 */
+		int count = 0; //variable to count the number of tires missing
+		Map<PartType, Integer> missingTypes = new HashMap<>(); //map to find missing parts
+		for(int i=0; i<parts.size(); i++){
+			if(parts[i] != "ENGINE"){	//if 'ENGINE' is absent
+				missingTypes.put("ENGINE", 1)
+			}
+			else if(parts[i] != "ELECTRICAL"){	//if 'ELECTRICAL' is absent
+				missingTypes.put("ELECTRICAL", 1)
+			}
+			else if(parts[i] != "FUEL_FILTER"){	//if 'FUEL_FILTER' is absent
+				missingTypes.put("FUEL_FILTER", 1)
+			}
+			else if(parts[i] != "OIL_FILTER"){	//if 'OIL_FILTER' is absent
+				missingTypes.put("OIL_FILTER", 1)
+			}
+			else if(parts[i] != "TIRE"){	//if 'TIRE' is absent
+				count++;
+				missingTypes.put("TIRE", count)
+			}
+		}
 
-		return null;
+		return missingTypes;
+	}
 	}
 
 	@Override

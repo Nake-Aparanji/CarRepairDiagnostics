@@ -39,6 +39,34 @@ public class CarDiagnosticEngine {
 		 * console output is as least as informative as the provided methods.
 		 */
 
+		 //First diagnostic step
+		 if (car.year == NULL){
+			System.out.println("Year missing");
+		 }
+		 if (car.make == NULL){
+			System.out.println("Make missing");
+		 }
+		 if (car.model == NULL){
+			System.out.println("Model missing");
+		 }
+
+		 //Second diagnostic step
+		 Map<PartType, Integer> x = new HashMap<>();
+		 x.put(car.getMissingPartsMap(partType, Integer))
+		 if x.get(car.partType) > 0{
+			printMissingPart(x.get(car.partType), x.get(car.Integer));
+		 }
+		 else{
+			System.out.println("No missing parts");
+		 }
+
+		 //Third diagnostic step
+		if (car.partType.condition != "NEW" or car.partType.condition != "GOOD" or car.partType.condition != "WORN"){
+				printDamagedPart(partType, condition);
+		}
+		else{
+			System.out.println("No damaged parts");
+		}
 
 	}
 
